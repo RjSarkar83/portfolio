@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050506'/%3E%3Crect x='1.5' y='1.5' width='61' height='61' rx='14.5' fill='none' stroke='%23ff4054' stroke-opacity='.55' stroke-width='3'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-style='italic' font-size='27' font-weight='bold' fill='%23f5f3f0' text-anchor='middle'%3ERj%3C/text%3E%3C/svg%3E">
 <title>Ranjan Sarkar — Designer Portfolio | Rj_Designer</title>
 <link rel="preload" as="font" type="font/woff2" href="./Montserrat-400.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="./PlayfairDisplay-700i.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="./PlayfairDisplay-700.woff2" crossorigin>
 <link rel="preload" as="image" href="000.webp">
 <style>@font-face {
   font-family: 'Montserrat';
@@ -73,12 +73,28 @@
   font-display: swap;
   src: url(./PlayfairDisplay-700i.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}</style>
+}@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(./PlayfairDisplay-600.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./PlayfairDisplay-700.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
 <style>
 :root{
   --bg:#050506; --bg2:#0b0b0e;
   --ink:#f5f3f0; --mut:#a6a19c; --dim:#726d68;
-  --red:#ff4054; --red-deep:#c9182e; --gold:#e6b23a;
+  --red:#ff4054; --red-deep:#c9182e; --gold:#FF0000;
   --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.16);
   --glass:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
   --glass2:linear-gradient(165deg,rgba(255,255,255,.095),rgba(255,255,255,.035));
@@ -102,7 +118,7 @@ button{font-family:inherit;cursor:pointer}
 /* ---------- background layers ---------- */
 .bg{position:fixed;inset:0;z-index:-2;background:
   radial-gradient(1100px 700px at 85% -10%, rgba(201,24,46,.16), transparent 60%),
-  radial-gradient(900px 600px at -10% 30%, rgba(230,178,58,.07), transparent 55%),
+  radial-gradient(900px 600px at -10% 30%, rgba(255,0,0,.07), transparent 55%),
   radial-gradient(1000px 800px at 50% 120%, rgba(255,64,84,.08), transparent 60%),
   var(--bg)}
 .bg::before{content:"";position:absolute;inset:0;
@@ -114,11 +130,11 @@ button{font-family:inherit;cursor:pointer}
   background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter><rect width="180" height="180" filter="url(%23n)" opacity="0.55"/></svg>')}
 .orb{position:fixed;border-radius:50%;pointer-events:none;z-index:-1;will-change:transform}
 .orb.o1{width:940px;height:940px;background:radial-gradient(circle,rgba(201,24,46,.17),transparent 62%);top:-340px;right:-280px;animation:float1 16s ease-in-out infinite alternate}
-.orb.o2{width:820px;height:820px;background:radial-gradient(circle,rgba(230,178,58,.08),transparent 62%);bottom:-320px;left:-260px;animation:float2 20s ease-in-out infinite alternate}
+.orb.o2{width:820px;height:820px;background:radial-gradient(circle,rgba(255,0,0,.08),transparent 62%);bottom:-320px;left:-260px;animation:float2 20s ease-in-out infinite alternate}
 @keyframes float1{to{transform:translate(-70px,90px) scale(1.1)}}
 @keyframes float2{to{transform:translate(90px,-60px) scale(1.07)}}
 .cursor{position:fixed;left:-320px;top:-320px;width:640px;height:640px;border-radius:50%;pointer-events:none;z-index:1;mix-blend-mode:screen;
-  background:radial-gradient(circle,rgba(255,64,84,.075),rgba(230,178,58,.02) 40%,transparent 62%)}
+  background:radial-gradient(circle,rgba(255,64,84,.075),rgba(255,0,0,.02) 40%,transparent 62%)}
 
 #progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:60;background:linear-gradient(90deg,var(--red),var(--gold))}
 
@@ -140,6 +156,8 @@ nav .navin{max-width:1240px;margin:0 auto;padding:0 26px;display:flex;align-item
 .brand img{width:38px;height:38px;border-radius:11px;border:1px solid var(--line2)}
 .brand .brandname{font-family:var(--serif);font-style:italic;font-weight:700;font-size:19px;letter-spacing:.4px}
 .brand .brandname i{color:var(--red);font-style:italic}
+.brand .brandname u,.f-big u,.pj u{text-decoration:none;font-style:normal}
+.brand .brandname em,.f-big em,.pj em{font-style:italic}
 .pj{font-family:var(--serif);font-style:italic;font-weight:700;letter-spacing:.4px}
 .navlinks{display:flex;gap:4px;align-items:center}
 .navlinks a{text-decoration:none;font-size:10.5px;font-weight:600;letter-spacing:2.2px;color:var(--mut);padding:8px 12px;border-radius:10px;transition:.3s}
@@ -209,8 +227,9 @@ main{position:relative}
 .hero-kick::after{background:linear-gradient(90deg,var(--red),transparent)}
 h1.name{font-family:var(--serif);font-weight:700;font-size:clamp(48px,8.5vw,104px);letter-spacing:.02em;line-height:1.05;margin:16px 0 12px}
 h1.name .dot{color:var(--red)}
+h1.name em{font-style:italic}
 .hero-sub{font-size:clamp(11px,1.6vw,14px);font-weight:600;letter-spacing:4px;color:var(--ink);text-transform:uppercase}
-.hero-sub em{font-family:var(--serif);font-style:italic;font-weight:600;color:var(--gold);letter-spacing:1px}
+.hero-sub em{font-family:var(--serif);font-style:normal;font-weight:600;color:var(--gold);letter-spacing:1px}
 .hero-line{margin-top:14px;font-size:10.5px;letter-spacing:3px;color:var(--dim);font-weight:600}
 .hero-line b{color:var(--mut)}
 .innobadge{margin:26px auto 0;display:inline-flex;align-items:center;gap:12px;padding:11px 20px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:2px;color:#ffd7dc;background:rgba(255,64,84,.10);border:1px solid rgba(255,64,84,.35);cursor:pointer;transition:.35s var(--ease);animation:glow 3.4s ease-in-out infinite}
@@ -268,8 +287,9 @@ h1.name .dot{color:var(--red)}
 /* ---------- timeline ---------- */
 .tlwrap{position:relative;padding-left:34px}
 .tlwrap::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--red),rgba(255,64,84,.12))}
-.tl{position:relative;margin-bottom:18px;border-radius:var(--r);padding:24px 28px;cursor:pointer;transition:.4s var(--ease)}
-.tl::before{content:"";position:absolute;left:-31px;top:30px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2.5px solid var(--red);box-shadow:0 0 14px rgba(255,64,84,.6)}
+.tli{position:relative;margin-bottom:18px}
+.tl{position:relative;border-radius:var(--r);padding:24px 28px;cursor:pointer;transition:.4s var(--ease)}
+.tli::before{content:"";position:absolute;left:-31px;top:30px;z-index:2;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2.5px solid var(--red);box-shadow:0 0 14px rgba(255,64,84,.6)}
 .tl:hover{transform:translateX(8px);border-color:rgba(255,64,84,.45)}
 .tl-top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
 .tl-when{font-size:10.5px;font-weight:700;letter-spacing:3px;color:var(--gold)}
@@ -290,7 +310,7 @@ h1.name .dot{color:var(--red)}
 .bcard:hover::after{opacity:1;transform:none;color:var(--red)}
 .b-init{font-family:var(--serif);font-style:italic;font-size:30px;font-weight:700;color:rgba(255,255,255,.9);line-height:1;margin-bottom:14px}
 .bcard h3{font-size:14px;font-weight:800;letter-spacing:.6px;margin-bottom:7px}
-.bcard .bsec{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);border:1px solid rgba(230,178,58,.35);background:rgba(230,178,58,.07);border-radius:999px;padding:5px 11px}
+.bcard .bsec{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);border:1px solid rgba(255,0,0,.35);background:rgba(255,0,0,.07);border-radius:999px;padding:5px 11px}
 .bnote{margin-top:22px;text-align:center;font-size:11px;letter-spacing:2px;color:var(--dim);font-weight:600}
 .bnote b{color:var(--red)}
 
@@ -303,12 +323,12 @@ h1.name .dot{color:var(--red)}
 .scard:hover{transform:translateY(-5px);border-color:rgba(255,64,84,.45)}
 .scard .srow{display:flex;align-items:center;gap:13px;margin-bottom:16px}
 .smark{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:17px;font-weight:800;background:rgba(255,64,84,.12);border:1px solid rgba(255,64,84,.3);color:#ff8b98;flex-shrink:0}
-.scard.ai .smark{background:rgba(230,178,58,.1);border-color:rgba(230,178,58,.35);color:var(--gold)}
+.scard.ai .smark{background:rgba(255,0,0,.1);border-color:rgba(255,0,0,.35);color:var(--gold)}
 .scard h3{font-size:13.5px;font-weight:800;letter-spacing:.8px}
 .scard .stag{font-size:9px;letter-spacing:2px;color:var(--dim);font-weight:700;margin-top:3px}
 .bar{height:5px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
 .bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--red),#ff7d5c);transition:width 1.4s var(--ease) .3s}
-.scard.ai .bar i{background:linear-gradient(90deg,var(--gold),#ffd97a)}
+.scard.ai .bar i{background:linear-gradient(90deg,var(--gold),#ff6a6a)}
 .bar-lbl{display:flex;justify-content:space-between;font-size:9.5px;letter-spacing:1.5px;color:var(--dim);font-weight:700;margin-top:8px}
 .scard.ai .bar-lbl b{color:var(--gold)}
 .langedu{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
@@ -348,18 +368,18 @@ h1.name .dot{color:var(--red)}
 .cbody{padding:20px 22px 24px}
 .crow{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .cno{font-size:22px;font-weight:900;color:transparent;-webkit-text-stroke:1px var(--red);letter-spacing:1px}
-.cchip{font-size:8.5px;font-weight:800;letter-spacing:2px;color:var(--gold);border:1px solid rgba(230,178,58,.4);background:rgba(230,178,58,.07);padding:5px 10px;border-radius:999px;white-space:nowrap}
+.cchip{font-size:8.5px;font-weight:800;letter-spacing:2px;color:var(--gold);border:1px solid rgba(255,0,0,.4);background:rgba(255,0,0,.07);padding:5px 10px;border-radius:999px;white-space:nowrap}
 .cbody h3{font-size:14.5px;font-weight:800;letter-spacing:1.2px;margin:12px 0 7px;text-transform:uppercase}
 .cbody p{font-size:12px;color:var(--mut);line-height:1.7}
 
 /* ---------- innovation ---------- */
 @property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
 .inno-panel{border-radius:26px;padding:46px 42px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:center;border:1px solid rgba(255,64,84,.3);
-  background:linear-gradient(150deg,rgba(255,64,84,.09),rgba(255,255,255,.028) 45%,rgba(230,178,58,.05));
+  background:linear-gradient(150deg,rgba(255,64,84,.09),rgba(255,255,255,.028) 45%,rgba(255,0,0,.05));
   box-shadow:0 40px 80px -30px rgba(201,24,46,.35),inset 0 1px 0 rgba(255,255,255,.08)}
 .inno-panel::before{content:"";position:absolute;top:-120px;left:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,64,84,.22),transparent 65%);pointer-events:none}
 .inno-panel::after{content:"";position:absolute;inset:0;border-radius:26px;padding:1px;pointer-events:none;
-  background:conic-gradient(from var(--ang),transparent 0deg,transparent 250deg,rgba(255,64,84,.7) 300deg,rgba(230,178,58,.55) 330deg,transparent 360deg);
+  background:conic-gradient(from var(--ang),transparent 0deg,transparent 250deg,rgba(255,64,84,.7) 300deg,rgba(255,0,0,.55) 330deg,transparent 360deg);
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
   mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;
   animation:angspin 7s linear infinite}
@@ -445,7 +465,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
 .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
 .mchip{font-size:10px;font-weight:600;letter-spacing:1.4px;color:var(--mut);border:1px solid var(--line2);background:rgba(255,255,255,.04);border-radius:999px;padding:7px 13px}
 .mchip.red{color:#ff8b98;border-color:rgba(255,64,84,.4);background:rgba(255,64,84,.08)}
-.mchip.gold{color:var(--gold);border-color:rgba(230,178,58,.4);background:rgba(230,178,58,.07)}
+.mchip.gold{color:var(--gold);border-color:rgba(255,0,0,.4);background:rgba(255,0,0,.07)}
 .mlist{list-style:none;margin:6px 0 18px}
 .mlist li{position:relative;padding:9px 0 9px 26px;color:var(--mut);font-size:13px;border-bottom:1px solid rgba(255,255,255,.05)}
 .mlist li:last-child{border-bottom:0}
@@ -546,7 +566,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
 <!-- ============ NAV ============ -->
 <nav id="nav">
   <div class="navin">
-    <a class="brand" href="#home"><img id="navLogo" alt="Rj_Designer" /><span class="brandname">Rj<i>_</i>Designer</span></a>
+    <a class="brand" href="#home"><img id="navLogo" alt="Rj_Designer" /><span class="brandname"><u>Rj</u><i>_</i><em>Designer</em></span></a>
     <div class="navlinks" id="navlinks">
       <a href="#home" data-sec="home">HOME</a>
       <a href="#about" data-sec="about">ABOUT</a>
@@ -576,9 +596,9 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
 <section id="home">
   <div class="monobadge glass2 hi hi-1"><img id="heroMono" alt="AV monogram"/></div>
   <div class="hero-kick hi hi-2">PORTFOLIO · 2026</div>
-  <div class="name-wrap"><h1 class="name"><span class="name-inner">Ranjan<span class="dot">.</span> Sarkar</span></h1></div>
+  <div class="name-wrap"><h1 class="name"><span class="name-inner"><em>Ranjan</em><span class="dot">.</span> Sarkar</span></h1></div>
   <div class="hero-sub hi hi-3">Creative Lead — <em>Structural Branding</em> & Production Design</div>
-  <div class="hero-line hi hi-4"><b>12+ YEARS</b> · RETAIL PRODUCTION DESIGN · ADVERTISING & BRAND DIRECTION<br>FOUNDER — <span class="pj" style="font-size:1.3em">ArtViSiON</span> · PRODUCTion DESiGN · INDORE, M.P.</div>
+  <div class="hero-line hi hi-4"><b>12+ YEARS</b> · RETAIL PRODUCTION DESIGN · ADVERTISING & BRAND DIRECTION<br>FOUNDER — <span class="pj" style="font-size:1.3em;font-style:normal">ArtViSiON</span> · PRODUCTion DESiGN · INDORE, M.P.</div>
   <button class="innobadge hi hi-5" onclick="document.getElementById('inno').scrollIntoView()">🔥 WORLD'S FIRST SELF-IGNITING AGARBATTI — BARUD-TIP TECHNOLOGY</button>
   <div class="hero-cta hi hi-6">
     <a class="btn btn-red" href="#case">EXPLORE CASE STUDY <span class="arr">→</span></a>
@@ -612,12 +632,12 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
   <div class="about-grid">
     <div class="a-card glass reveal">
       <img id="aboutMono" alt="AV monogram"/>
-      <h3 class="pj">Ranjan<span class="dot">.</span> Sarkar</h3>
+      <h3 class="pj" style="font-style:normal"><em>Ranjan</em><span class="dot">.</span> Sarkar</h3>
       <div class="role">STRUCTURAL BRANDING · PRODUCTION DESIGN</div>
       <div class="facts">
         <div class="fact"><span>BASE</span><b>Indore, Madhya Pradesh</b></div>
         <div class="fact"><span>EXPERIENCE</span><b>12+ Years</b></div>
-        <div class="fact"><span>FOUNDER</span><b class="pj" style="font-size:15px">Rj_Designer</b></div>
+        <div class="fact"><span>FOUNDER</span><b class="pj" style="font-size:15px"><u>Rj</u><em>_Designer</em></b></div>
         <div class="fact"><span>LANGUAGES</span><b>Hindi · English · Bengali</b></div>
         <div class="fact"><span>DELIVERY</span><b>Design → Fabrication → Site</b></div>
       </div>
@@ -645,7 +665,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
     <div class="ghost">02</div>
     <div>
       <div class="kicker">CAREER</div>
-      <h2>Experience — <em>2015 → Today</em></h2>
+      <h2>Experience — <em>2014 → Today</em></h2>
       <p class="sec-sub">Assistant Designer to Founder. Nine years inside a national-media powerhouse, then out to build my own studio.</p>
     </div>
     <div class="sec-idx"><b>02</b> / 07</div>
@@ -762,11 +782,11 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
       <h3>Let's build your <em>brand.</em></h3>
       <p>Direct lines — pick the channel you prefer, or open the full contact sheet.</p>
       <a class="ctile glass" href="tel:+919009001551"><div class="cico">📞</div><div><span>CALL / WHATSAPP</span><b>+91 900 900 1551</b></div></a>
-      <a class="ctile glass" href="/cdn-cgi/l/email-protection#85f7eff6e4f7eee4f7c5ece6e9eaf0e1abe6eae8"><div class="cico">✉️</div><div><span>EMAIL</span><b><span class="__cf_email__" data-cfemail="b3c1d9c0d2c1d8d2c1f3dad0dfdcc6d79dd0dcde">[email&#160;protected]</span></b></div></a>
-      <a class="ctile glass" href="https://wa.me/919009001551" target="_blank" rel="noopener"><div class="cico">💬</div><div><span>WHATSAPP</span><b>Chat with <span class="pj">Rj_Designer</span></b></div></a>
+      <a class="ctile glass" href="/cdn-cgi/l/email-protection#c4b6aeb7a5b6afa5b684ada7a8abb1a0eaa7aba9"><div class="cico">✉️</div><div><span>EMAIL</span><b><span class="__cf_email__" data-cfemail="5e2c342d3f2c353f2c1e373d32312b3a703d3133">[email&#160;protected]</span></b></div></a>
+      <a class="ctile glass" href="https://wa.me/919009001551" target="_blank" rel="noopener"><div class="cico">💬</div><div><span>WHATSAPP</span><b>Chat with <span class="pj"><u>Rj</u><em>_Designer</em></span></b></div></a>
       <a class="ctile glass" href="https://www.linkedin.com/in/rj-sarkar/" target="_blank" rel="noopener"><div class="cico">🔗</div><div><span>LINKEDIN</span><b>in/rj-sarkar</b></div></a>
-      <a class="ctile glass" href="https://www.behance.net/gallery/219553967/ArtViSiON-PRODUCTion-DESiGN" target="_blank" rel="noopener"><div class="cico">◆</div><div><span>BEHANCE</span><b>Portfolio Gallery</b></div></a>
-      <a class="ctile glass" href="https://maps.google.com/?q=Indore,+Madhya+Pradesh" target="_blank" rel="noopener"><div class="cico">📍</div><div><span>STUDIO</span><b>Indore, Madhya Pradesh</b></div></a>
+      <a class="ctile glass" href="https://www.behance.net/ranjansark83" target="_blank" rel="noopener"><div class="cico">◆</div><div><span>BEHANCE</span><b>Portfolio Gallery</b></div></a>
+      <a class="ctile glass" href="https://maps.app.goo.gl/7bw9jwT3ASWrcrL36" target="_blank" rel="noopener"><div class="cico">📍</div><div><span>STUDIO</span><b>Indore, Madhya Pradesh</b></div></a>
       <button class="linkbtn" style="margin-top:8px" onclick="openContact()">VIEW FULL CONTACT SHEET →</button>
     </div>
     <div class="cform glass reveal">
@@ -800,14 +820,15 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
 
 <!-- ============ FOOTER ============ -->
 <footer>
-  <div class="f-big">Rj<i>_</i>Designer</div>
+  <div class="f-big"><u>Rj</u><i>_</i><em>Designer</em></div>
   <div class="f-in">
     <p>© 2026 <b>RANJAN SARKAR</b> · INDORE, M.P. · ARTWORKING • BRANDING • CREATIVE • DESIGNING • EXECUTION</p>
     <div class="f-nav">
       <a href="#about">ABOUT</a><a href="#exp">EXPERIENCE</a><a href="#brands">BRANDS</a><a href="#skills">SKILLS</a>
       <a href="#case">CASE STUDY</a><a href="#inno">INNOVATION</a><a href="#contact">CONTACT</a>
       <a href="https://www.linkedin.com/in/rj-sarkar/" target="_blank" rel="noopener">LINKEDIN</a>
-      <a href="https://www.behance.net/gallery/219553967/ArtViSiON-PRODUCTion-DESiGN" target="_blank" rel="noopener">BEHANCE</a>
+      <a href="https://www.behance.net/ranjansark83" target="_blank" rel="noopener">BEHANCE</a>
+      <a href="https://rjsarkar83.github.io/Brand_Designer/" target="_blank" rel="noopener">D-CARD</a>
     </div>
     <button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="back to top">↑</button>
   </div>
@@ -947,7 +968,7 @@ const EXPHL=[
 /* ================= HELPERS ================= */
 const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
 const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
-function cName(c){return c==="ArtViSiON: PRODUCTion DESiGN"?'<span class="pj">ArtViSiON</span>: PRODUCTion DESiGN':esc(c);}
+function cName(c){return c==="ArtViSiON: PRODUCTion DESiGN"?'<span class="pj" style="font-style:normal">ArtViSiON</span>: PRODUCTion DESiGN':esc(c);}
 function img(i){return '<img loading="lazy" decoding="async" width="'+IM[i].w+'" height="'+IM[i].h+'" src="'+IM[i].s+'" alt="'+esc(IM[i].a)+'">';}
 function short(i){return IM[i].a.split(" — ")[0];}
 function stars(n){let s="";for(let i=1;i<=5;i++)s+=i<=n?"★":"☆";return s;}
@@ -1056,7 +1077,7 @@ function openBrand(i){
   const b=BRANDS[i];
   openModal({k:"03 — BRANDS",t:`${esc(b.n)} <em>· ${esc(b.s)}</em>`,b:`
    <div class="chiprow"><span class="mchip gold">${esc(b.s)}</span><span class="mchip red">${esc(b.t)}</span></div>
-   <p><b>${esc(b.n)}</b> — national account engagement: ${esc(b.t.toLowerCase())} executed with the full <span class="pj">Rj_Designer</span> production pipeline — creative, documentation and on-site follow-through.</p>
+   <p><b>${esc(b.n)}</b> — national account engagement: ${esc(b.t.toLowerCase())} executed with the full <span class="pj"><u>Rj</u><em>_Designer</em></span> production pipeline — creative, documentation and on-site follow-through.</p>
    <div class="msec-t">SCOPE OF WORK</div>
    <ul class="mlist">${b.sc.map(s=>'<li>'+esc(s)+'</li>').join("")}</ul>
    <div class="msec-t">DELIVERY STANDARD</div>${chipRow(["Fabrication-ready files","CMYK + DXF documentation","On-site execution QA"])}
@@ -1138,11 +1159,11 @@ function openContact(){
    <div class="mrow"><div class="cico">💬</div><div><span>WHATSAPP</span><b>+91 900 900 1551</b></div><a href="https://wa.me/919009001551" target="_blank" rel="noopener">CHAT →</a></div>
    <div class="mrow"><div class="cico">✉️</div><div><span>EMAIL</span><b>${EMAIL}</b></div><a href="mailto:${EMAIL}">WRITE →</a></div>
    <div class="mrow"><div class="cico">🔗</div><div><span>LINKEDIN</span><b>linkedin.com/in/rj-sarkar</b></div><a href="https://www.linkedin.com/in/rj-sarkar/" target="_blank" rel="noopener">OPEN →</a></div>
-   <div class="mrow"><div class="cico">◆</div><div><span>BEHANCE</span><b>Portfolio Gallery</b></div><a href="https://www.behance.net/gallery/219553967/ArtViSiON-PRODUCTion-DESiGN" target="_blank" rel="noopener">OPEN →</a></div>
-   <div class="mrow"><div class="cico">📍</div><div><span>STUDIO</span><b>Indore, Madhya Pradesh, India</b></div><a href="https://maps.google.com/?q=Indore,+Madhya+Pradesh" target="_blank" rel="noopener">MAP →</a></div>
+   <div class="mrow"><div class="cico">◆</div><div><span>BEHANCE</span><b>Portfolio Gallery</b></div><a href="https://www.behance.net/ranjansark83" target="_blank" rel="noopener">OPEN →</a></div>
+   <div class="mrow"><div class="cico">📍</div><div><span>STUDIO</span><b>Indore, Madhya Pradesh, India</b></div><a href="https://maps.app.goo.gl/7bw9jwT3ASWrcrL36" target="_blank" rel="noopener">MAP →</a></div>
    <div class="msec-t">BUSINESS</div>
    <ul class="mlist">
-    <li><b><span class="pj">ArtViSiON</span>: PRODUCTion DESiGN</b> — founded 2024, Indore</li>
+    <li><b><span class="pj" style="font-style:normal">ArtViSiON</span>: PRODUCTion DESiGN</b> — founded 2024, Indore</li>
     <li>Creative Lead — <b>Ranjan Sarkar</b></li>
     <li>12+ years · 300+ brand IDs · 15+ sectors · 1 world-first</li>
    </ul>
@@ -1174,10 +1195,10 @@ function renderMarquee(){
 }
 function renderTimeline(){
   $("#timeline").innerHTML=EXP.map((e,i)=>`
-   <div class="tl glass reveal" onclick="openExp(${i})">
+   <div class="tli"><div class="tl glass reveal" onclick="openExp(${i})">
     <div class="tl-top"><span class="tl-when">${esc(e.p)}</span><span class="view">DETAILS →</span></div>
     <h3>${cName(e.c)}</h3><div class="r">${esc(e.r)}</div><p>${esc(e.d)}</p>
-   </div>`).join("");
+   </div></div>`).join("");
   $("#expChips").innerHTML=EXPHL.map(x=>`<div class="echip"><b>➤ ${x[0]}</b>${x[1]}</div>`).join("");
 }
 function renderBrands(){
@@ -1290,5 +1311,5 @@ renderMarquee();renderTimeline();renderBrands();renderSkills();renderCase();init
 initReveal();initNav();initCursor();
 setTimeout(()=>runCounters($("#stats")),1350);
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a38e1352a9973b07',t:'MTc4OTAzOTU2Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
