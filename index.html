@@ -89,6 +89,22 @@
   src: url(./PlayfairDisplay-700.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./PlayfairDisplay-400i.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./PlayfairDisplay-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 </style>
 <style>
 :root{
@@ -157,7 +173,7 @@ nav .navin{max-width:1240px;margin:0 auto;padding:0 26px;display:flex;align-item
 .brand .brandname{font-family:var(--serif);font-style:italic;font-weight:700;font-size:19px;letter-spacing:.4px}
 .brand .brandname i{color:var(--red);font-style:italic}
 .brand .brandname u,.f-big u,.pj u{text-decoration:none;font-style:normal}
-.brand .brandname em,.f-big em,.pj em{font-style:italic}
+.brand .brandname em,.f-big em,.pj em{font-style:italic;font-weight:400}
 .pj{font-family:var(--serif);font-style:italic;font-weight:700;letter-spacing:.4px}
 .navlinks{display:flex;gap:4px;align-items:center}
 .navlinks a{text-decoration:none;font-size:10.5px;font-weight:600;letter-spacing:2.2px;color:var(--mut);padding:8px 12px;border-radius:10px;transition:.3s}
@@ -227,7 +243,7 @@ main{position:relative}
 .hero-kick::after{background:linear-gradient(90deg,var(--red),transparent)}
 h1.name{font-family:var(--serif);font-weight:700;font-size:clamp(48px,8.5vw,104px);letter-spacing:.02em;line-height:1.05;margin:16px 0 12px}
 h1.name .dot{color:var(--red)}
-h1.name em{font-style:italic}
+h1.name em{font-style:italic;font-weight:400}
 .hero-sub{font-size:clamp(11px,1.6vw,14px);font-weight:600;letter-spacing:4px;color:var(--ink);text-transform:uppercase}
 .hero-sub em{font-family:var(--serif);font-style:normal;font-weight:600;color:var(--gold);letter-spacing:1px}
 .hero-line{margin-top:14px;font-size:10.5px;letter-spacing:3px;color:var(--dim);font-weight:600}
@@ -596,7 +612,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
 <section id="home">
   <div class="monobadge glass2 hi hi-1"><img id="heroMono" alt="AV monogram"/></div>
   <div class="hero-kick hi hi-2">PORTFOLIO · 2026</div>
-  <div class="name-wrap"><h1 class="name"><span class="name-inner"><em>Ranjan</em><span class="dot">.</span> Sarkar</span></h1></div>
+  <div class="name-wrap"><h1 class="name"><span class="name-inner">Ranjan<span class="dot">_</span><em>Sarkar</em></span></h1></div>
   <div class="hero-sub hi hi-3">Creative Lead — <em>Structural Branding</em> & Production Design</div>
   <div class="hero-line hi hi-4"><b>12+ YEARS</b> · RETAIL PRODUCTION DESIGN · ADVERTISING & BRAND DIRECTION<br>FOUNDER — <span class="pj" style="font-size:1.3em;font-style:normal">ArtViSiON</span> · PRODUCTion DESiGN · INDORE, M.P.</div>
   <button class="innobadge hi hi-5" onclick="document.getElementById('inno').scrollIntoView()">🔥 WORLD'S FIRST SELF-IGNITING AGARBATTI — BARUD-TIP TECHNOLOGY</button>
@@ -632,7 +648,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
   <div class="about-grid">
     <div class="a-card glass reveal">
       <img id="aboutMono" alt="AV monogram"/>
-      <h3 class="pj" style="font-style:normal"><em>Ranjan</em><span class="dot">.</span> Sarkar</h3>
+      <h3 class="pj" style="font-style:normal">Ranjan<span class="dot">_</span><em>Sarkar</em></h3>
       <div class="role">STRUCTURAL BRANDING · PRODUCTION DESIGN</div>
       <div class="facts">
         <div class="fact"><span>BASE</span><b>Indore, Madhya Pradesh</b></div>
@@ -644,7 +660,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
     </div>
     <div class="a-main glass reveal">
       <p>I'm a Structural Branding & Production Design Specialist with 12+ years of experience delivering end-to-end design solutions for retail, corporate and commercial environments — structural branding, signage systems, visual merchandising, brand guidelines, fabrication documentation (CMYK print files, CNC/laser-ready DXF, fabrication drawings) and on-site execution. My track record is simple: transform concepts into impactful brand experiences, delivered with design precision, quality control and measurable brand impact.</p>
-      <div class="a-quote">"360° END-TO-END PRODUCTION DESIGN & <b>A-TO-Z</b> BRANDING SOLUTIONS"</div>
+      <div class="a-quote">"360° End-to-End Production Design & <b>A-to-Z</b> Branding Solutions"</div>
       <div class="focus4">
         <div class="foc glass"><span class="fi">◈</span><b>STRUCTURAL BRANDING</b><span>Identity engineered into every surface of a space</span></div>
         <div class="foc glass"><span class="fi">▣</span><b>SIGNAGE & FACADES</b><span>Glow, 3D letters, blades — fabricator-ready files</span></div>
@@ -782,7 +798,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
       <h3>Let's build your <em>brand.</em></h3>
       <p>Direct lines — pick the channel you prefer, or open the full contact sheet.</p>
       <a class="ctile glass" href="tel:+919009001551"><div class="cico">📞</div><div><span>CALL / WHATSAPP</span><b>+91 900 900 1551</b></div></a>
-      <a class="ctile glass" href="/cdn-cgi/l/email-protection#c4b6aeb7a5b6afa5b684ada7a8abb1a0eaa7aba9"><div class="cico">✉️</div><div><span>EMAIL</span><b><span class="__cf_email__" data-cfemail="5e2c342d3f2c353f2c1e373d32312b3a703d3133">[email&#160;protected]</span></b></div></a>
+      <a class="ctile glass" href="/cdn-cgi/l/email-protection#2a5840594b58414b586a434946455f4e04494547"><div class="cico">✉️</div><div><span>EMAIL</span><b><span class="__cf_email__" data-cfemail="51233b2230233a30231138323d3e24357f323e3c">[email&#160;protected]</span></b></div></a>
       <a class="ctile glass" href="https://wa.me/919009001551" target="_blank" rel="noopener"><div class="cico">💬</div><div><span>WHATSAPP</span><b>Chat with <span class="pj"><u>Rj</u><em>_Designer</em></span></b></div></a>
       <a class="ctile glass" href="https://www.linkedin.com/in/rj-sarkar/" target="_blank" rel="noopener"><div class="cico">🔗</div><div><span>LINKEDIN</span><b>in/rj-sarkar</b></div></a>
       <a class="ctile glass" href="https://www.behance.net/ranjansark83" target="_blank" rel="noopener"><div class="cico">◆</div><div><span>BEHANCE</span><b>Portfolio Gallery</b></div></a>
@@ -1044,7 +1060,7 @@ function chipRow(arr){return '<div class="chiprow">'+arr.map(c=>'<span class="mc
 function openAbout(){
   openModal({k:"01 — ABOUT",t:'Ranjan Sarkar — <em>Full Profile</em>',wide:true,b:`
    <p>Structural Branding & Production Design Specialist with <b>12+ years</b> delivering end-to-end design solutions for retail, corporate & commercial environments. I transform concepts into impactful brand experiences — delivered with <b>design precision, quality control and measurable brand impact.</b></p>
-   <p class="a-quote" style="margin:18px 0;font-family:var(--serif);font-style:italic;font-size:20px;color:#fff">"360° END-TO-END PRODUCTION DESIGN & <b style="color:var(--red)">A-TO-Z</b> BRANDING SOLUTIONS"</p>
+   <p class="a-quote" style="margin:18px 0;font-family:var(--serif);font-style:italic;font-size:20px;color:#fff">"360° End-to-End Production Design & <b style="color:var(--red)">A-to-Z</b> Branding Solutions"</p>
    <div class="msec-t">FOCUS AREAS</div>${chipRow(["Structural Branding","Signage Systems","Visual Merchandising","Brand Guidelines","Fabrication Documentation","On-Site Execution"])}
    <div class="msec-t">THE APPROACH</div>
    <ul class="mlist">
@@ -1311,5 +1327,5 @@ renderMarquee();renderTimeline();renderBrands();renderSkills();renderCase();init
 initReveal();initNav();initCursor();
 setTimeout(()=>runCounters($("#stats")),1350);
 </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a391122a5ec848f8',t:'MTc4OTA3MDk3Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
