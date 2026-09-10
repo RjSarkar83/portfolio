@@ -395,6 +395,14 @@ h1.name em,.a-card h3.pj em{font-family:'Cormorant Garamond',var(--serif);font-s
 .cchip{font-size:8.5px;font-weight:800;letter-spacing:2px;color:var(--gold);border:1px solid rgba(255,0,0,.4);background:rgba(255,0,0,.07);padding:5px 10px;border-radius:999px;white-space:nowrap}
 .cbody h3{font-size:14.5px;font-weight:800;letter-spacing:1.2px;margin:12px 0 7px;text-transform:uppercase}
 .cbody p{font-size:12px;color:var(--mut);line-height:1.7}
+/* featured innovation card — directly under case study header */
+#featInno{margin-bottom:18px}
+#featInno:empty{display:none}
+.ccard.feat{display:grid;grid-template-columns:320px 1fr;align-items:stretch}
+.ccard.feat .cbody{display:flex;flex-direction:column;justify-content:center;padding:28px 30px}
+.ccard.feat .cbody h3{font-size:clamp(18px,2.4vw,24px)}
+.ccard.feat .cbody p{font-size:13px;max-width:560px}
+@media(max-width:700px){.ccard.feat{grid-template-columns:1fr}}
 
 /* ---------- innovation ---------- */
 @property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
@@ -677,15 +685,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
     </div>
     <div class="sec-idx"><b>01</b> / 03</div>
   </div>
-  <div class="case-intro glass2 reveal">
-    <div class="ci-left">
-      <div class="kicker">11 CATEGORIES × 110 PRESENTATIONS</div>
-      <h3>One black-gold language, from <em>visiting card</em> to <em>night street.</em></h3>
-      <p>Every system a retail brand needs — identity, packaging, signage, in-shop VM, production documentation, multi-sector rollouts, events, digital — built, documented and photographed. Climaxing in the world's first self-igniting agarbatti.</p>
-      <button class="btn btn-red" onclick="openAll110()">VIEW ALL 110 PRESENTATIONS <span class="arr">→</span></button>
-    </div>
-    <div class="ci-right" id="ciThumb"></div>
-  </div>
+  <div id="featInno"></div>
   <div class="cgrid" id="caseGrid"></div>
 </section>
 
@@ -1284,8 +1284,9 @@ function renderSkills(){
    <li onclick="openEdu(${i})"><span class="ey">${esc(e.y)}</span><div><b>${esc(e.t)}</b><span>${esc(e.d)}</span></div></li>`).join("");
 }
 function renderCase(){
-  $("#ciThumb").innerHTML=[1,2,13,15].map(i=>img(i)).join("");
-  $("#caseGrid").innerHTML=CATS.map((c,ci)=>{
+  const _f=CATS[10],_fo=101;
+  $("#featInno").innerHTML=`<div class="ccard feat glass reveal" onclick="openCat(10)"><div class="cmos">${[0,1,8,9].map(k=>img(_fo+k)).join("")}</div><div class="cbody"><div class="crow"><span class="cno">${_f.no}</span><span class="cchip">10 PRESENTATIONS</span></div><h3>${esc(_f.t)}</h3><p>${esc(_f.d)}</p></div></div>`;
+  $("#caseGrid").innerHTML=CATS.slice(0,10).map((c,ci)=>{
     const off=1+ci*10;
     return `<div class="ccard glass reveal" onclick="openCat(${ci})">
      <div class="cmos">${[0,1,8,9].map(k=>img(off+k)).join("")}</div>
@@ -1368,5 +1369,7 @@ initReveal();initNav();initCursor();
 setTimeout(()=>runCounters($("#stats")),1350);
 (()=>{const h=location.hash;if(h==="#about")openAboutPage();else if(h==="#exp")openExpPage();else if(h==="#brands")openBrandsPage();else if(h==="#skills")openSkillsPage();})();
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a39124669c2926a7',t:'MTc4OTA3MTcxOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a39184dfab602c7b',t:'MTc4OTA3NTY3MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a39124669c2926a7',t:'MTc4OTA3MTcxOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a39199bb8d9c3fb5',t:'MTc4OTA3NjUyNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
