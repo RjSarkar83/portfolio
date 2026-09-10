@@ -464,6 +464,29 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
 .top-btn{width:46px;height:46px;border-radius:50%;border:1px solid var(--line2);background:rgba(255,255,255,.04);color:#fff;font-size:16px;transition:.35s var(--ease)}
 .top-btn:hover{transform:translateY(-4px);border-color:var(--red);background:rgba(255,64,84,.15)}
 
+/* ---------- popup pages (ABOUT / EXPERIENCE / BRANDS / SKILLS open as modal) ---------- */
+.navlinks a,.msheet a,.f-nav a{cursor:pointer}
+.mhead-left{display:flex;align-items:flex-start;gap:14px;min-width:0}
+.mback-btn{display:none;align-items:center;gap:6px;margin-top:2px;flex-shrink:0;font-size:10px;font-weight:800;letter-spacing:2px;color:var(--mut);background:rgba(255,255,255,.05);border:1px solid var(--line2);border-radius:11px;padding:10px 14px;transition:.3s;white-space:nowrap}
+.mback-btn:hover{color:#fff;border-color:rgba(255,64,84,.5);background:rgba(255,64,84,.12)}
+.modal.has-back .mback-btn{display:inline-flex}
+.mbody .about-grid{display:grid;grid-template-columns:290px 1fr;gap:16px}
+.mbody .a-card,.mbody .a-main{padding:26px 24px}
+.mbody .focus4{grid-template-columns:repeat(4,1fr)}
+.mbody .bgrid{grid-template-columns:repeat(3,1fr)}
+.mbody .sgrid{grid-template-columns:repeat(2,1fr)}
+.mbody .tl:hover{transform:translateX(4px)}
+@media(max-width:760px){
+  .mbody .about-grid{grid-template-columns:1fr}
+  .mbody .bgrid{grid-template-columns:repeat(2,1fr)}
+  .mbody .focus4{grid-template-columns:1fr 1fr}
+  .mbody .langedu{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .mbody .bgrid,.mbody .sgrid{grid-template-columns:1fr}
+  .mhead-left{flex-direction:column;gap:10px}
+}
+
 /* ---------- modal ---------- */
 .modal{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:22px;visibility:hidden;pointer-events:none}
 .modal.open{visibility:visible;pointer-events:auto}
@@ -593,10 +616,10 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
     <a class="brand" href="#home"><img id="navLogo" alt="Rj_Designer" /><span class="brandname"><u>Rj</u><i>_</i><em>Designer</em></span></a>
     <div class="navlinks" id="navlinks">
       <a href="#home" data-sec="home">HOME</a>
-      <a href="#about" data-sec="about">ABOUT</a>
-      <a href="#exp" data-sec="exp">EXPERIENCE</a>
-      <a href="#brands" data-sec="brands">BRANDS</a>
-      <a href="#skills" data-sec="skills">SKILLS</a>
+      <a href="javascript:void(0)" onclick="openAboutPage()">ABOUT</a>
+      <a href="javascript:void(0)" onclick="openExpPage()">EXPERIENCE</a>
+      <a href="javascript:void(0)" onclick="openBrandsPage()">BRANDS</a>
+      <a href="javascript:void(0)" onclick="openSkillsPage()">SKILLS</a>
       <a href="#case" data-sec="case">CASE STUDY</a>
       <a href="#inno" data-sec="inno">INNOVATION</a>
       <a href="#contact" data-sec="contact">CONTACT</a>
@@ -606,10 +629,10 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
 </nav>
 <div class="msheet" id="msheet">
   <a href="#home"><b>01</b>HOME</a>
-  <a href="#about"><b>02</b>ABOUT</a>
-  <a href="#exp"><b>03</b>EXPERIENCE</a>
-  <a href="#brands"><b>04</b>BRANDS</a>
-  <a href="#skills"><b>05</b>SKILLS</a>
+  <a href="javascript:void(0)" onclick="openAboutPage()"><b>02</b>ABOUT</a>
+  <a href="javascript:void(0)" onclick="openExpPage()"><b>03</b>EXPERIENCE</a>
+  <a href="javascript:void(0)" onclick="openBrandsPage()"><b>04</b>BRANDS</a>
+  <a href="javascript:void(0)" onclick="openSkillsPage()"><b>05</b>SKILLS</a>
   <a href="#case"><b>06</b>CASE STUDY</a>
   <a href="#inno"><b>07</b>INNOVATION</a>
   <a href="#contact"><b>08</b>CONTACT</a>
@@ -642,114 +665,17 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
 <!-- ============ MARQUEE ============ -->
 <div class="marquee"><div class="mtrack" id="mtrack"></div></div>
 
-<!-- ============ ABOUT ============ -->
-<section class="sec" id="about">
-  <div class="sec-head reveal">
-    <div class="ghost">01</div>
-    <div>
-      <div class="kicker">WHO I AM</div>
-      <h2>About — <em>360°</em> Production Design</h2>
-      <p class="sec-sub">Design precision. Quality control. Measurable brand impact. From a single vector to a full street.</p>
-    </div>
-    <div class="sec-idx"><b>01</b> / 07</div>
-  </div>
-  <div class="about-grid">
-    <div class="a-card glass reveal">
-      <img id="aboutMono" alt="AV monogram"/>
-      <h3 class="pj" style="font-style:normal">Ranjan<span class="dot">_</span><em>Sarkar</em></h3>
-      <div class="role">STRUCTURAL BRANDING · PRODUCTION DESIGN</div>
-      <div class="facts">
-        <div class="fact"><span>BASE</span><b>Indore, Madhya Pradesh</b></div>
-        <div class="fact"><span>EXPERIENCE</span><b>12+ Years</b></div>
-        <div class="fact"><span>FOUNDER</span><b class="pj" style="font-size:15px"><u>ArtViSiON</div>
-        <div class="fact"><span>LANGUAGES</span><b>Hindi · English · Bengali</b></div>
-        <div class="fact"><span>DELIVERY</span><b>Design → Fabrication → Site</b></div>
-      </div>
-    </div>
-    <div class="a-main glass reveal">
-      <p>I'm a Structural Branding & Production Design Specialist with 12+ years of experience delivering end-to-end design solutions for retail, corporate and commercial environments — structural branding, signage systems, visual merchandising, brand guidelines, fabrication documentation (CMYK print files, CNC/laser-ready DXF, fabrication drawings) and on-site execution. My track record is simple: transform concepts into impactful brand experiences, delivered with design precision, quality control and measurable brand impact.</p>
-      <div class="a-quote">"360° End-to-End Production Design & <b>A-to-Z</b> Branding Solutions"</div>
-      <div class="focus4">
-        <div class="foc glass"><span class="fi">◈</span><b>STRUCTURAL BRANDING</b><span>Identity engineered into every surface of a space</span></div>
-        <div class="foc glass"><span class="fi">▣</span><b>SIGNAGE & FACADES</b><span>Glow, 3D letters, blades — fabricator-ready files</span></div>
-        <div class="foc glass"><span class="fi">◧</span><b>VISUAL MERCHANDISING</b><span>Shelf science planned to the facing</span></div>
-        <div class="foc glass"><span class="fi">✎</span><b>PRODUCTION DOCS</b><span>DXF, CMYK, dielines, SOPs — zero site guesswork</span></div>
-      </div>
-      <div class="a-cta">
-        <button class="btn btn-red" onclick="openAbout()">FULL PROFILE <span class="arr">→</span></button>
-        <button class="btn btn-ghost" onclick="document.getElementById('case').scrollIntoView()">VIEW WORK</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ EXPERIENCE ============ -->
-<section class="sec" id="exp">
-  <div class="sec-head reveal">
-    <div class="ghost">02</div>
-    <div>
-      <div class="kicker">CAREER</div>
-      <h2>Experience — <em>2014 → Today</em></h2>
-      <p class="sec-sub">Assistant Designer to Founder. Nine years inside a national-media powerhouse, then out to build my own studio.</p>
-    </div>
-    <div class="sec-idx"><b>02</b> / 07</div>
-  </div>
-  <div class="tlwrap" id="timeline"></div>
-  <div class="exp-chips reveal" id="expChips"></div>
-</section>
-
-<!-- ============ BRANDS ============ -->
-<section class="sec" id="brands">
-  <div class="sec-head reveal">
-    <div class="ghost">03</div>
-    <div>
-      <div class="kicker">CLIENT WORK</div>
-      <h2>Brands — <em>24</em> National Accounts</h2>
-      <p class="sec-sub">Telecom to tyres, banking to beer. Tap any brand to open its project brief.</p>
-    </div>
-    <div class="sec-idx"><b>03</b> / 07</div>
-  </div>
-  <div class="bgrid" id="brandGrid"></div>
-  <div class="bnote reveal">PLUS <b>300+ BRAND IDS</b> ACROSS 15+ SECTORS — TELECOM · ELECTRONICS · BANKING · PHARMACY · AGRI · EDUCATION · AUTOMOTIVE · INDUSTRIAL · FMCG</div>
-</section>
-
-<!-- ============ SKILLS ============ -->
-<section class="sec" id="skills">
-  <div class="sec-head reveal">
-    <div class="ghost">04</div>
-    <div>
-      <div class="kicker">TOOLKIT</div>
-      <h2>Skills — Software & <em>AI</em></h2>
-      <p class="sec-sub">Classic design muscle, supercharged with an AI workflow that cuts delivery time by 10×.</p>
-    </div>
-    <div class="sec-idx"><b>04</b> / 07</div>
-  </div>
-  <div class="sk-sub reveal">DESIGN SOFTWARE</div>
-  <div class="sgrid" id="skillGrid"></div>
-  <div class="sk-sub reveal">AI WORKFLOW</div>
-  <div class="sgrid" id="aiGrid"></div>
-  <div class="langedu">
-    <div class="le-card glass reveal">
-      <h4>◉ LANGUAGES</h4>
-      <div id="langList"></div>
-    </div>
-    <div class="le-card glass reveal">
-      <h4>◉ EDUCATION</h4>
-      <ul class="edu" id="eduList"></ul>
-    </div>
-  </div>
-</section>
+<!-- ABOUT / EXPERIENCE / BRANDS / SKILLS removed from page flow — they now open as popups -->
 
 <!-- ============ CASE STUDY ============ -->
 <section class="sec" id="case">
   <div class="sec-head reveal">
-    <div class="ghost">05</div>
     <div>
       <div class="kicker">FLAGSHIP PROJECT</div>
       <h2>Case Study — <em>AV Fragrance</em></h2>
       <p class="sec-sub">A complete 360° brand build for a fragrance startup — from one geometric monogram to a full retail + digital ecosystem.</p>
     </div>
-    <div class="sec-idx"><b>05</b> / 07</div>
+    <div class="sec-idx"><b>01</b> / 03</div>
   </div>
   <div class="case-intro glass2 reveal">
     <div class="ci-left">
@@ -766,13 +692,13 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
 <!-- ============ INNOVATION ============ -->
 <section class="sec" id="inno">
   <div class="sec-head reveal">
-    <div class="ghost">06</div>
+    <div class="ghost">02</div>
     <div>
       <div class="kicker">R&amp;D</div>
       <h2>Innovation — <em>World's First</em></h2>
       <p class="sec-sub">Not just design — invention. A product that rewrites a 3,000-year-old ritual.</p>
     </div>
-    <div class="sec-idx"><b>06</b> / 07</div>
+    <div class="sec-idx"><b>02</b> / 03</div>
   </div>
   <div class="inno-panel reveal">
     <div>
@@ -793,13 +719,13 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
 <!-- ============ CONTACT ============ -->
 <section class="sec" id="contact">
   <div class="sec-head reveal">
-    <div class="ghost">07</div>
+    <div class="ghost">03</div>
     <div>
       <div class="kicker">SAY HELLO</div>
       <h2>Contact — <em>Design to Execution</em></h2>
       <p class="sec-sub">Tell me what you're building. I'll bring the vectors, the files and the follow-through.</p>
     </div>
-    <div class="sec-idx"><b>07</b> / 07</div>
+    <div class="sec-idx"><b>03</b> / 03</div>
   </div>
   <div class="contact-grid">
     <div class="c-left glass reveal">
@@ -848,7 +774,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
   <div class="f-in">
     <p>© 2026 <b>RANJAN SARKAR</b> · INDORE, M.P. · ARTWORKING • BRANDING • CREATIVE • DESIGNING • EXECUTION</p>
     <div class="f-nav">
-      <a href="#about">ABOUT</a><a href="#exp">EXPERIENCE</a><a href="#brands">BRANDS</a><a href="#skills">SKILLS</a>
+      <a href="javascript:void(0)" onclick="openAboutPage()">ABOUT</a><a href="javascript:void(0)" onclick="openExpPage()">EXPERIENCE</a><a href="javascript:void(0)" onclick="openBrandsPage()">BRANDS</a><a href="javascript:void(0)" onclick="openSkillsPage()">SKILLS</a>
       <a href="#case">CASE STUDY</a><a href="#inno">INNOVATION</a><a href="#contact">CONTACT</a>
       <a href="https://www.linkedin.com/in/rj-sarkar/" target="_blank" rel="noopener">LINKEDIN</a>
       <a href="https://www.behance.net/ranjansark83" target="_blank" rel="noopener">BEHANCE</a>
@@ -863,7 +789,7 @@ footer{border-top:1px solid var(--line);margin-top:60px;position:relative;overfl
   <div class="mback" onclick="closeModal()"></div>
   <div class="mshell" id="mshell" role="dialog" aria-modal="true" aria-labelledby="mTitle">
     <div class="mhead">
-      <div><div class="mkicker" id="mKicker"></div><h3 id="mTitle"></h3></div>
+      <div class="mhead-left"><button class="mback-btn" id="mBack" onclick="modalBack()" aria-label="back">← BACK</button><div><div class="mkicker" id="mKicker"></div><h3 id="mTitle"></h3></div></div>
       <button class="mclose" id="mClose" onclick="closeModal()" aria-label="close">✕</button>
     </div>
     <div class="mbody" id="mBody"></div>
@@ -1000,20 +926,38 @@ function stars(n){let s="";for(let i=1;i<=5;i++)s+=i<=n?"★":"☆";return s;}
 /* ================= MODAL ================= */
 const modal=$("#modal");
 let lastFocus=null;
-function openModal(o){
+let MSTACK=[];
+function openModal(o,push){
+  if(push&&modal.classList.contains("open")){
+    MSTACK.push({k:$("#mKicker").textContent,t:$("#mTitle").innerHTML,b:$("#mBody").innerHTML,w:$("#mshell").classList.contains("wide")});
+  }
+  if(!push)MSTACK=[];
   $("#mKicker").textContent=o.k||"";
   $("#mTitle").innerHTML=o.t;
   $("#mBody").innerHTML=o.b;
   $("#mshell").classList.toggle("wide",!!o.wide);
-  lastFocus=document.activeElement;
+  modal.classList.toggle("has-back",MSTACK.length>0);
+  if(!push)lastFocus=document.activeElement;
   modal.classList.add("open");
   modal.setAttribute("aria-hidden","false");
   document.body.style.overflow="hidden";
   $("#mshell").scrollTop=0;
   setTimeout(()=>{try{$("#mClose").focus();}catch(e){}},80);
 }
+function openModalPush(o){openModal(o,true);}
+function modalBack(){
+  const p=MSTACK.pop();
+  if(!p){closeModal();return;}
+  $("#mKicker").textContent=p.k;
+  $("#mTitle").innerHTML=p.t;
+  $("#mBody").innerHTML=p.b;
+  $("#mshell").classList.toggle("wide",p.w);
+  modal.classList.toggle("has-back",MSTACK.length>0);
+  $("#mshell").scrollTop=0;
+}
 function closeModal(){
-  modal.classList.remove("open");
+  MSTACK=[];
+  modal.classList.remove("open","has-back");
   modal.setAttribute("aria-hidden","true");
   if(!$("#lb").classList.contains("open"))document.body.style.overflow="";
   if(lastFocus&&lastFocus.focus){try{lastFocus.focus();}catch(e){}}
@@ -1065,8 +1009,96 @@ function catLbClick(i,off,count){
 }
 function chipRow(arr){return '<div class="chiprow">'+arr.map(c=>'<span class="mchip">'+esc(c)+'</span>').join("")+'</div>';}
 
+/* ================= POPUP PAGES (ABOUT / EXPERIENCE / BRANDS / SKILLS) ================= */
+function openAboutPage(){
+  openModal({k:"ABOUT",t:"About — <em>360°</em> Production Design",wide:true,b:`
+   <div class="about-grid">
+    <div class="a-card glass">
+      <img src="${IM[0].s}" alt="AV monogram"/>
+      <h3 class="pj" style="font-style:normal">Ranjan<span>_</span><em>Sarkar</em></h3>
+      <div class="role">STRUCTURAL BRANDING · PRODUCTION DESIGN</div>
+      <div class="facts">
+        <div class="fact"><span>BASE</span><b>Indore, Madhya Pradesh</b></div>
+        <div class="fact"><span>EXPERIENCE</span><b>12+ Years</b></div>
+        <div class="fact"><span>FOUNDER</span><b class="pj" style="font-size:15px;font-style:normal">ArtViSiON</b></div>
+        <div class="fact"><span>LANGUAGES</span><b>Hindi · English · Bengali</b></div>
+        <div class="fact"><span>DELIVERY</span><b>Design → Fabrication → Site</b></div>
+      </div>
+    </div>
+    <div class="a-main glass">
+      <p>I'm a Structural Branding & Production Design Specialist with 12+ years of experience delivering end-to-end design solutions for retail, corporate and commercial environments — structural branding, signage systems, visual merchandising, brand guidelines, fabrication documentation (CMYK print files, CNC/laser-ready DXF, fabrication drawings) and on-site execution. My track record is simple: transform concepts into impactful brand experiences, delivered with design precision, quality control and measurable brand impact.</p>
+      <div class="a-quote">"360° End-to-End Production Design & <b>A-to-Z</b> Branding Solutions"</div>
+      <div class="focus4">
+        <div class="foc glass"><span class="fi">◈</span><b>STRUCTURAL BRANDING</b><span>Identity engineered into every surface of a space</span></div>
+        <div class="foc glass"><span class="fi">▣</span><b>SIGNAGE & FACADES</b><span>Glow, 3D letters, blades — fabricator-ready files</span></div>
+        <div class="foc glass"><span class="fi">◧</span><b>VISUAL MERCHANDISING</b><span>Shelf science planned to the facing</span></div>
+        <div class="foc glass"><span class="fi">✎</span><b>PRODUCTION DOCS</b><span>DXF, CMYK, dielines, SOPs — zero site guesswork</span></div>
+      </div>
+      <div class="a-cta">
+        <button class="btn btn-red" onclick="openAbout()">FULL PROFILE <span class="arr">→</span></button>
+        <button class="btn btn-ghost" onclick="closeModal();document.getElementById('case').scrollIntoView()">VIEW WORK</button>
+      </div>
+    </div>
+   </div>
+  `});
+}
+function openExpPage(){
+  const tl=EXP.map((e,i)=>`
+   <div class="tli"><div class="tl glass" onclick="openExp(${i})">
+    <div class="tl-top"><span class="tl-when">${esc(e.p)}</span><span class="view">DETAILS →</span></div>
+    <h3>${cName(e.c)}</h3><div class="r">${esc(e.r)}</div><p>${esc(e.d)}</p>
+   </div></div>`).join("");
+  const chips=EXPHL.map(x=>`<div class="echip"><b>➤ ${x[0]}</b>${x[1]}</div>`).join("");
+  openModal({k:"EXPERIENCE",t:"Experience — <em>2014 → Today</em>",wide:true,b:`
+   <p>Assistant Designer to Founder. Nine years inside a national-media powerhouse, then out to build my own studio. <b>Tap any role for details.</b></p>
+   <div class="tlwrap" style="margin-top:20px">${tl}</div>
+   <div class="exp-chips">${chips}</div>
+  `});
+}
+function openBrandsPage(){
+  const grid=BRANDS.map((b,i)=>`
+   <div class="bcard glass" onclick="openBrand(${i})">
+    <div class="b-init">${esc(b.n[0])}</div>
+    <h3>${esc(b.n)}</h3>
+    <span class="bsec">${esc(b.s.toUpperCase())}</span>
+   </div>`).join("");
+  openModal({k:"BRANDS",t:"Brands — <em>24</em> National Accounts",wide:true,b:`
+   <p>Telecom to tyres, banking to beer. <b>Tap any brand to open its project brief.</b></p>
+   <div class="bgrid" style="margin-top:20px">${grid}</div>
+   <div class="bnote">PLUS <b>300+ BRAND IDS</b> ACROSS 15+ SECTORS — TELECOM · ELECTRONICS · BANKING · PHARMACY · AGRI · EDUCATION · AUTOMOTIVE · INDUSTRIAL · FMCG</div>
+  `});
+}
+function openSkillsPage(){
+  const sg=SKILLS.map((s,i)=>`
+   <div class="scard glass" onclick="openSkill(SKILLS,${i},false)">
+    <div class="srow"><div class="smark">${esc(s.n[0])}</div><div><h3>${esc(s.n)}</h3><div class="stag">DESIGN TOOLS</div></div></div>
+    <div class="bar"><i style="width:${s.lv}%"></i></div>
+    <div class="bar-lbl"><span>PROFICIENCY</span><b>${s.lv}%</b></div>
+   </div>`).join("");
+  const ag=AIS.map((s,i)=>`
+   <div class="scard ai glass" onclick="openSkill(AIS,${i},true)">
+    <div class="srow"><div class="smark">✦</div><div><h3>${esc(s.n)}</h3><div class="stag">AI WORKFLOW</div></div></div>
+    <div class="bar"><i style="width:${s.lv}%"></i></div>
+    <div class="bar-lbl"><span>WORKFLOW FIT</span><b>${s.lv}%</b></div>
+   </div>`).join("");
+  const ll=LANGS.map((l,i)=>`
+   <div class="lang" onclick="openLang(${i})"><b>${esc(l.n)}</b><span class="stars">${stars(l.st)}</span></div>`).join("");
+  const el=EDUS.map((e,i)=>`
+   <li onclick="openEdu(${i})"><span class="ey">${esc(e.y)}</span><div><b>${esc(e.t)}</b><span>${esc(e.d)}</span></div></li>`).join("");
+  openModal({k:"SKILLS",t:"Skills — Software & <em>AI</em>",wide:true,b:`
+   <p>Classic design muscle, supercharged with an AI workflow that cuts delivery time by 10×. <b>Tap any card for details.</b></p>
+   <div class="sk-sub">DESIGN SOFTWARE</div>
+   <div class="sgrid">${sg}</div>
+   <div class="sk-sub">AI WORKFLOW</div>
+   <div class="sgrid">${ag}</div>
+   <div class="langedu">
+    <div class="le-card glass"><h4>◉ LANGUAGES</h4>${ll}</div>
+    <div class="le-card glass"><h4>◉ EDUCATION</h4><ul class="edu">${el}</ul></div>
+   </div>
+  `});
+}
 function openAbout(){
-  openModal({k:"01 — ABOUT",t:'Ranjan Sarkar — <em>Full Profile</em>',wide:true,b:`
+  openModalPush({k:"ABOUT · FULL PROFILE",t:'Ranjan Sarkar — <em>Full Profile</em>',wide:true,b:`
    <p>Structural Branding & Production Design Specialist with <b>12+ years</b> delivering end-to-end design solutions for retail, corporate & commercial environments. I transform concepts into impactful brand experiences — delivered with <b>design precision, quality control and measurable brand impact.</b></p>
    <p class="a-quote" style="margin:18px 0;font-family:var(--serif);font-style:italic;font-size:20px;color:#fff">"360° End-to-End Production Design & <b style="color:var(--red)">A-to-Z</b> Branding Solutions"</p>
    <div class="msec-t">FOCUS AREAS</div>${chipRow(["Structural Branding","Signage Systems","Visual Merchandising","Brand Guidelines","Fabrication Documentation","On-Site Execution"])}
@@ -1089,7 +1121,7 @@ function openAbout(){
 }
 function openExp(i){
   const e=EXP[i];
-  openModal({k:"02 — EXPERIENCE",t:`<span style="color:var(--gold)">${e.p}</span> — ${cName(e.c)}`,wide:true,b:`
+  openModalPush({k:"EXPERIENCE · DETAIL",t:`<span style="color:var(--gold)">${e.p}</span> — ${cName(e.c)}`,wide:true,b:`
    <div class="chiprow"><span class="mchip gold">${esc(e.r)}</span><span class="mchip">${esc(e.p)}</span></div>
    <p>${esc(e.d)}</p>
    <div class="msec-t">KEY WORK</div>
@@ -1099,7 +1131,7 @@ function openExp(i){
 }
 function openBrand(i){
   const b=BRANDS[i];
-  openModal({k:"03 — BRANDS",t:`${esc(b.n)} <em>· ${esc(b.s)}</em>`,b:`
+  openModalPush({k:"BRANDS · PROJECT BRIEF",t:`${esc(b.n)} <em>· ${esc(b.s)}</em>`,b:`
    <div class="chiprow"><span class="mchip gold">${esc(b.s)}</span><span class="mchip red">${esc(b.t)}</span></div>
    <p><b>${esc(b.n)}</b> — national account engagement: ${esc(b.t.toLowerCase())} executed with the full <span class="pj"><u>Rj</u><em>_Designer</em></span> production pipeline — creative, documentation and on-site follow-through.</p>
    <div class="msec-t">SCOPE OF WORK</div>
@@ -1109,7 +1141,7 @@ function openBrand(i){
 }
 function openSkill(list,i,ai){
   const s=list[i];
-  openModal({k:"04 — SKILLS",t:`${esc(s.n)} ${ai?"<em>· AI</em>":"<em>· Design</em>"}`,b:`
+  openModalPush({k:"SKILLS",t:`${esc(s.n)} ${ai?"<em>· AI</em>":"<em>· Design</em>"}`,b:`
    <div class="bar" style="height:8px"><i style="width:0" data-lv="${s.lv}"></i></div>
    <div class="bar-lbl" style="margin-top:10px"><span>${ai?"AI WORKFLOW":"PROFICIENCY"}</span><b>${s.lv}%</b></div>
    <p style="margin-top:18px"><b>${esc(s.n)}</b> — ${esc(s.nt)}.</p>
@@ -1121,7 +1153,7 @@ function openSkill(list,i,ai){
 }
 function openLang(i){
   const l=LANGS[i];
-  openModal({k:"04 — SKILLS · LANGUAGES",t:`${esc(l.n)} — ${stars(l.st)}`,b:`
+  openModalPush({k:"SKILLS · LANGUAGES",t:`${esc(l.n)} — ${stars(l.st)}`,b:`
    <div class="bar" style="height:8px"><i style="width:${l.st*20}%"></i></div>
    <div class="bar-lbl" style="margin-top:10px"><span>FLUENCY</span><b>${l.st}/5</b></div>
    <p style="margin-top:18px"><b>${esc(l.n)}</b> — ${esc(l.d)}</p>
@@ -1129,14 +1161,14 @@ function openLang(i){
 }
 function openEdu(i){
   const e=EDUS[i];
-  openModal({k:"04 — SKILLS · EDUCATION",t:esc(e.t),b:`
+  openModalPush({k:"SKILLS · EDUCATION",t:esc(e.t),b:`
    <div class="chiprow"><span class="mchip gold">${esc(e.y)}</span></div>
    <p><b>${esc(e.t)}</b> — ${esc(e.d)}</p>
   `});
 }
 function openCat(ci){
   const c=CATS[ci], off=1+ci*10;
-  openModal({k:`05 — CASE STUDY · CATEGORY ${c.no}`,t:esc(c.t),wide:true,b:`
+  openModal({k:`01 — CASE STUDY · CATEGORY ${c.no}`,t:esc(c.t),wide:true,b:`
    <div class="chiprow"><span class="mchip red">${c.no} / 11</span><span class="mchip">10 PRESENTATIONS</span><span class="mchip gold">AV FRAGRANCE</span></div>
    <p><b>${esc(c.d)}</b></p>
    <p>${esc(c.det)}</p>
@@ -1152,11 +1184,11 @@ function openAll110(){
     const off=1+ci*10;
     h+=`<div class="msec-t">${c.no} — ${esc(c.t).toUpperCase()} <span style="color:var(--dim);font-weight:600">· ${esc(c.d)}</span></div>${galHTML(off,10)}`;
   });
-  openModal({k:"05 — CASE STUDY · FULL CATALOGUE",t:"AV Fragrance — <em>All 110</em>",wide:true,b:h});
+  openModal({k:"01 — CASE STUDY · FULL CATALOGUE",t:"AV Fragrance — <em>All 110</em>",wide:true,b:h});
 }
 function openInno(){
   const off=101;
-  openModal({k:"06 — INNOVATION · WORLD'S FIRST",t:"AV Self-Ignite — <em>Barud-Tip Technology</em>",wide:true,b:`
+  openModal({k:"02 — INNOVATION · WORLD'S FIRST",t:"AV Self-Ignite — <em>Barud-Tip Technology</em>",wide:true,b:`
    <div class="chiprow"><span class="mchip red">🔥 WORLD'S FIRST</span><span class="mchip gold">BARUD-TIP</span><span class="mchip">#NOMATCHBOX</span></div>
    <p>The world's first <b>self-igniting agarbatti</b>. A micro barud (gunpowder) tip is fused to the agarbatti head and struck on a striker strip printed right on the pack — like a match, but built into the product. <b>No matchbox. No lighter.</b></p>
    <div class="msec-t">THE 3-STEP RITUAL</div>
@@ -1177,7 +1209,7 @@ function openInno(){
   `});
 }
 function openContact(){
-  openModal({k:"07 — CONTACT",t:"Full Contact <em>Sheet</em>",b:`
+  openModal({k:"03 — CONTACT",t:"Full Contact <em>Sheet</em>",b:`
    <p><b>LET'S BUILD YOUR BRAND — DESIGN TO EXECUTION.</b> Direct lines below, or use the form on the page.</p>
    <div class="mrow"><div class="cico">📞</div><div><span>CALL</span><b>${PHONE}</b></div><a href="tel:+919009001551">CALL →</a></div>
    <div class="mrow"><div class="cico">💬</div><div><span>WHATSAPP</span><b>+91 900 900 1551</b></div><a href="https://wa.me/919009001551" target="_blank" rel="noopener">CHAT →</a></div>
@@ -1312,7 +1344,7 @@ function initNav(){
   },{rootMargin:"-42% 0px -52% 0px"});
   secs.forEach(s=>io.observe(s));
   $("#burger").onclick=()=>document.body.classList.toggle("menuopen");
-  $$("#msheet a").forEach(a=>a.onclick=()=>document.body.classList.remove("menuopen"));
+  $$("#msheet a").forEach(a=>a.addEventListener("click",()=>document.body.classList.remove("menuopen")));
 }
 
 /* cursor glow (desktop, motion-safe) */
@@ -1331,9 +1363,10 @@ function initCursor(){
 }
 
 /* ================= INIT ================= */
-renderMarquee();renderTimeline();renderBrands();renderSkills();renderCase();initLogos();
+renderMarquee();renderCase();initLogos();
 initReveal();initNav();initCursor();
 setTimeout(()=>runCounters($("#stats")),1350);
+(()=>{const h=location.hash;if(h==="#about")openAboutPage();else if(h==="#exp")openExpPage();else if(h==="#brands")openBrandsPage();else if(h==="#skills")openSkillsPage();})();
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a39124669c2926a7',t:'MTc4OTA3MTcxOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a39124669c2926a7',t:'MTc4OTA3MTcxOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a39184dfab602c7b',t:'MTc4OTA3NTY3MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
